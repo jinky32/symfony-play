@@ -10,4 +10,4 @@
 /vendor/
 /web/bundles/
 .idea/
-git branch --set-upstream my_branch origin/my_branch
+

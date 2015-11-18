@@ -1,5 +1,5 @@
 {
-    "name": "stuartbrown/beta.three.symfony",
+    "name": "root/beta.three.symfony",
     "license": "proprietary",
     "type": "project",
     "autoload": {
