@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Yoda\EventBundle\Entity\Event;
 use Yoda\EventBundle\Form\EventType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 /**
  * Event controller.
@@ -16,6 +18,9 @@ class EventController extends Controller
 {
 
     /**
+     * @Route("/", name="event")
+     * @Template("EventBundle:Event:index.html.twig")
+     * !Template above could be blank and it would still work because it guesses from Controller and Action name
      * Lists all Event entities.
      *
      */
@@ -25,9 +30,9 @@ class EventController extends Controller
 
         $entities = $em->getRepository('EventBundle:Event')->findAll();
 
-        return $this->render('EventBundle:Event:index.html.twig', array(
+        return array(
             'entities' => $entities,
-        ));
+        );
     }
     /**
      * Creates a new Event entity.
